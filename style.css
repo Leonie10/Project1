@@ -42,9 +42,13 @@
     list-style: none;
     font-size: 20px;
     color: white;
-    animation: textDrape 14s linear infinite ;
+    animation: textDrape 10s linear infinite ;
 }
-
+.drape-textUp{
+    
+    top: -30vh;
+    animation: textDrapeUp 4s linear ;
+}
 @keyframes drapeMove {
     0%{
         left: -150vw;
@@ -66,6 +70,18 @@
 
     }
 }
+@keyframes textDrapeUp {
+    0%{
+        
+        left: 0;
+    }
+    100%{
+        left: 300vw;
+        
+        
+    }
+}
+
 
 @keyframes drapeUp{
     0%{
