@@ -154,10 +154,21 @@ nav ul li span {
     margin-left: 2.5vw;
     margin-right: 2.5vw;
     overflow: hidden;
-    background-color: rgb(22, 20, 20);
+
+}
+.slider-img{
+    position: relative;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
-
+    background-color: transparent;
+    background: no-repeat;
+    background-size: cover;
+    transition: animation 0.3s ease-in-out;
+}
+.slider-img--on {
+    animation: growImage 1.2s ease forwards;
 }
 
 .slider-drape{
@@ -191,3 +202,11 @@ nav ul li span {
     text-decoration: none;
 }
 
+@keyframes growImage {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.08);
+    }
+}

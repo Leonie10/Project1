@@ -4,6 +4,7 @@ let drapeWrap = document.querySelector('.drape');
 let textDrape = document.querySelectorAll('.drape-text');
 let homePage = document.querySelector('.homePage');
 let sliderList = document.querySelectorAll('.sliderList');
+let sliderImage = document.querySelector('.slider-img');
 
 // home page
 
@@ -16,13 +17,19 @@ drapeWrap.addEventListener('click', function () {
     homePage.style.display = 'block';
 })
 
-// diapo picture 
-// quand on passe sur le premier lien on voit la premiere photo
-const pictures = ['vietnam.jpg', ]
 
-sliderList.forEach(li => {
-    li.addEventListener('mouseover' function () {
-        for( i = 0; i < )
-    })
+let pictures = ['vietnam.jpg', 'jordan.jpg', 'southafrica.jpeg', 'ecuador.jpg', 'australia.jpg'];
+
+for( let x = 0; x < sliderList.length; x++){
+    sliderList[x].addEventListener('mouseover', function () {
+        sliderImage.style.backgroundImage = 'url(./images/' + pictures[x] + ')';
+        sliderImage.classList.add('slider-img--on');
+
+    });
+    sliderList[x].addEventListener('mouseout', function () {
+        sliderImage.classList.remove('slider-img--on');
+
+    });
     
-});
+
+}
