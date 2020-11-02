@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+
+/* --------- HOME PAGE ----------- */
+
 .drape-wrap{
     position: absolute;
     height: 100vh;
@@ -44,11 +47,7 @@
     color: white;
     animation: textDrape 10s linear infinite ;
 }
-.drape-textUp{
-    
-    top: -30vh;
-    animation: textDrapeUp 4s linear ;
-}
+
 @keyframes drapeMove {
     0%{
         left: -150vw;
@@ -70,17 +69,7 @@
 
     }
 }
-@keyframes textDrapeUp {
-    0%{
-        
-        left: 0;
-    }
-    100%{
-        left: 300vw;
-        
-        
-    }
-}
+
 
 
 @keyframes drapeUp{
@@ -91,4 +80,21 @@
     100%{
         transform: translate(300vw) rotateZ(19deg);
     }
+}
+
+/* ------------------------------------------------------- */
+
+
+/* ------------- LOADED PAGE ------------- */
+
+.loaded{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    background-color: rgb(22, 22, 22);
+}
+
+.slider ul li {
+    font-family: 'Open Sans Condensed', sans-serif;;
 }
