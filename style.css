@@ -21,15 +21,21 @@ body{
 
 .slider-drape{
     position: absolute;
-    height: 150%;
-    width: 100%;
+    top: -25%;
+    left: -25%;
+    bottom: -25%;
+    height: 200%;
+    width: 200%;
     background-color: rgb(34, 33, 30);
-    transform: rotateZ(10deg);
-    left: -150%;
+    transform: rotateZ(18deg);
 }
-.slider-drape--on{
-    background-color: violet;
-    animation: drapeMove 1s;
+.slider-drape--open{
+    background-color: rgb(34, 33, 30);
+    animation: drapeOpen 1s forwards;
+}
+.slider-drape--close{
+    background-color: rgb(34, 33, 30);
+    animation: drapeClose 2.3s forwards;
 }
 .slider-image{
     height: 100%;
@@ -54,11 +60,22 @@ body{
     color: rgb(245, 238, 238);
 }
 
-@keyframes drapeMove {
+@keyframes drapeOpen {
     0%{
-        left: -150%;
+        left: 0%;
     }
     100%{
         left: 100%;
+        transform: rotateZ(0deg);
+    }
+}
+@keyframes drapeClose {
+    0%{
+        top: -55%;
+        left: -275%;
+    }
+    100%{
+        left: 0%;
+        transform: rotateZ(0deg);
     }
 }
