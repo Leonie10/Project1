@@ -58,7 +58,7 @@ function growImage (li) {
 
 }
 
-
+// ajouter une ligne 
 
 body.addEventListener('mousemove', function (e) {
     if(e.target.classList[0] === 'slider-li'){
