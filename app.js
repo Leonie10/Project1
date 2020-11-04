@@ -1,5 +1,5 @@
 let body = document.querySelector('body');
-let sliderImg = document.querySelector('.slider-image');
+let sliderImg = document.querySelectorAll('.slider-image');
 let sliderDrape = document.querySelector('.slider-drape');
 let sliderUl = document.querySelector('.slider-ul');
 let sliderLi = document.querySelectorAll('.slider-li');
@@ -14,7 +14,6 @@ let drapeOpenClass = drapeClassOff + " slider-drape--open";
 let drapeCloseClass = drapeClassOff + " slider-drape--close";
 let mouseEvent = '';
 
-const pictures =  ['vietnam.jpg', 'ecuador.jpg', 'australia.jpg', 'jordan.jpg', 'southafrica.jpeg'];
 let oldLi;
 let currentLi;
 
@@ -35,7 +34,7 @@ function isMouseOver () {
 function liIsOver (li) {
     for(x = 0; x < sliderLi.length; x++){
         if(li == sliderLi[x]){
-            sliderImg.style.backgroundImage = 'url(./images/' + pictures[x] + ')';
+            sliderImg[x].classList.add('slider-image--grow');
         }else{
             continue;
         }

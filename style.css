@@ -31,11 +31,9 @@ body{
     z-index: 2;
 }
 .slider-drape--open{
-    background-color: rgb(34, 33, 30);
     animation: drapeOpen 1s forwards;
 }
 .slider-drape--close{
-    background-color: rgb(34, 33, 30);
     animation: drapeClose 2.3s forwards;
 }
 .slider-ul__container{
@@ -55,9 +53,12 @@ body{
     z-index: 1;
     background-repeat: no-repeat;
     background-size: cover;
+    border: none;
+    display: none;
 }
 .slider-image--grow{
-    animation: imageGrow 0.7s 0.5s forwards;
+    display: block;
+    animation: imageGrow 0.7s forwards;
 }
 .slider-ul {
     position: relative;
