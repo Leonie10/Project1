@@ -28,6 +28,7 @@ body{
     width: 200%;
     background-color: rgb(34, 33, 30);
     transform: rotateZ(18deg);
+    z-index: 2;
 }
 .slider-drape--open{
     background-color: rgb(34, 33, 30);
@@ -37,7 +38,7 @@ body{
     background-color: rgb(34, 33, 30);
     animation: drapeClose 2.3s forwards;
 }
-.slider-image{
+.slider-ul__container{
     height: 100%;
     width: 100%;
     display: flex;
@@ -45,13 +46,24 @@ body{
     justify-content: center;
     height: 100%;
     width: 100%;
-    background: url(../Project1/images/jordan.jpg);
-
+    
+}
+.slider-image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider-image--grow{
+    animation: imageGrow 0.7s 0.5s forwards;
 }
 .slider-ul {
     position: relative;
     text-align: center;
     cursor: pointer;
+    z-index: 2;
 }
 .slider-li{
     list-style: none;
@@ -77,5 +89,14 @@ body{
     100%{
         left: 0%;
         transform: rotateZ(0deg);
+    }
+}
+
+@keyframes imageGrow {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.3);
     }
 }
