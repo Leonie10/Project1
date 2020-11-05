@@ -26,39 +26,29 @@ function isMouseOver () {
         drapeClass = drapeOpenClass;
     } else if (mouseEvent === 'mouseout'){
         drapeClass = drapeCloseClass;
+        removeGrowImage();
     
     }
     return sliderDrape.classList = drapeClass;
 }
 
+function removeGrowImage () {
+    for(i = 0; i < sliderImg.length; i++){
+        sliderImg[i].classList.remove('slider-image--grow');
+    }
+    return true;
+}
+
 function liIsOver (li) {
+    removeGrowImage();
     for(x = 0; x < sliderLi.length; x++){
-        if(li == sliderLi[x]){
-            sliderImg[x].classList.add('slider-image--grow');
-        }else{
-            continue;
+            if(li == sliderLi[x]){
+                sliderImg[x].classList.add('slider-image--grow');
+            }else{
+                continue;
+            }
         }
-    }
 }
-
-function growImage (li) {
-    if(li.classList[0] === 'slider-li' && !oldLi){
-        currentLi = li;
-        oldLi = currentLi;
-        sliderImg.style.animation = 'growImage 1s forwards';
-    }
-    if (li !== currentLi && oldLi){
-        oldLi = currentLi;
-        currentLi = li;
-    }
-    if(currentLi !== oldLi){
-
-    }
-
-
-}
-
-// ajouter une ligne 
 
 body.addEventListener('mousemove', function (e) {
     if(e.target.classList[0] === 'slider-li'){
@@ -66,7 +56,6 @@ body.addEventListener('mousemove', function (e) {
         mouseEvent = 'mouseover';
         isMouseOver();
         liIsOver(e.target);
-        growImage(e.target);
     } else if(e.target.classList[0] !== 'slider-li'){
         mouseOverUl = false;
         mouseEvent = 'mouseout';
