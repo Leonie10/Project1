@@ -1,4 +1,5 @@
 let body = document.querySelector('body');
+let sliderWrapper = document.querySelector('.slider-wrapper');
 let sliderImg = document.querySelectorAll('.slider-image');
 let sliderDrape = document.querySelector('.slider-drape');
 let sliderUl = document.querySelector('.slider-ul');
@@ -15,9 +16,6 @@ let drapeCloseClass = drapeClassOff + " slider-drape--close";
 let mouseEvent = '';
 
 
-
-
-
 function isMouseOver (li) {
     if(mouseEvent === 'mouseover'){
         drapeClass = drapeOpenClass;
@@ -28,15 +26,11 @@ function isMouseOver (li) {
     return sliderDrape.classList = drapeClass;
 }
 
-
-
 function removeGrowImage () {
     for(let i = 0; i < sliderImg.length; i++){
         sliderImg[i].classList.remove('slider-image--grow');
     }
 }
-
-
 
 function lastLiGrowRemove (target) {
     if(sliderDrape.classList[1] == 'slider-drape--close'){
@@ -83,6 +77,8 @@ body.addEventListener('mousemove', function (e) {
     }
     
 } );
+
+
 
 
 
